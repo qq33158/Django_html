@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Django網站</title>
+</head>
+<body>
+    <form method="post" action="/djpost">
+             {% csrf_token %} <!-- 增加安全性必須加上 -->
+             <p>帳號 : <input type='text' name='username'></p>
+             <p>密碼 : <input type='text' name='password'></p>
+             <p><button type='submit'>送出</button></p>
+    </form>
+</body>
+</html>
