@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from myapp.views import sayhello,hello2,hello3,hello4,dice,show,djget,djpost
+from myapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +28,7 @@ urlpatterns = [
     path('show/',show),
     path('djget/',djget),
     path('djpost',djpost), # 不能加/,會ERROR
+    path('listone/',views.listone),
+    path('listall/',views.listall),
+    path('listall2/',views.listall2),
 ]
