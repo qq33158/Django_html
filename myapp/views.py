@@ -5,6 +5,8 @@ import random
 from myapp.models import student
 
 # Create your views here.
+def base(request):
+    return render(request,"base.html",locals())
 
 def sayhello(request):
     return HttpResponse("Hello Django!")

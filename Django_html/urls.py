@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp.views import sayhello,hello2,hello3,hello4,dice,show,djget,djpost
+from myapp.views import sayhello,hello2,hello3,hello4,dice,show,djget,djpost,base
 from myapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('base/',base),
     path('',sayhello),
     path('hello2/<str:username>',hello2),
     path('hello3/<str:username>',hello3),
@@ -27,8 +28,11 @@ urlpatterns = [
     path('dice/',dice),
     path('show/',show),
     path('djget/',djget),
-    path('djpost',djpost), # 不能加/,會ERROR
+    path('djpost/',djpost),
     path('listone/',views.listone),
     path('listall/',views.listall),
     path('listall2/',views.listall2),
+    path('insert/',views.insert),
+    path('modify/',views.modify),
+    path('delete/',views.delete),
 ]

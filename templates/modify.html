@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}<title>Modify</title>{% endblock %}
+{% block content %}
+    <h2>修改資料</h2>
+    <form method="POST" action="/modify/?name={{name}}">
+        {% csrf_token %}
+        <p>姓名: <input type='text' name='name' value={{name}}></p>
+        <p>性別: <input type='text' name='sex' value={{sex}}></p>
+        <p>生日: <input type='text' name='birthday' value={{birthday}}></p>
+        <p>郵件: <input type='text' name='email' value={{email}}></p>
+        <p>電話: <input type='text' name='phone' value={{phone}}></p>
+        <p>地址: <input type='text' name='addr' value={{addr}}></p>
+        <p><button type='submit'>確定</button></p>
+    </form>
+{% endblock %}
